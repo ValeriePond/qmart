@@ -1,0 +1,28 @@
+@import url('fonts/gilroy/stylesheet.css');
+
+@import 'colors.scss';
+$sizes: (
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gilroy-Regular', 'Roboto', 'Oxygen';
+  font-family: Inter;
+  background-color: $white;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

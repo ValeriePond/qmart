@@ -1,0 +1,21 @@
+@import '../../colors.scss';
+$sizes: (
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+
+header {
+  display: flex;
+  justify-content: space-around;
+  background-color: $white;
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  max-width: 1680px;
+  margin: auto;
+}
