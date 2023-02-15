@@ -6,16 +6,88 @@ $sizes: (
   'lg': 992px,
   'xl': 1200px,
 );
+.wrapper {
+  height: 100px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
-header {
-  display: flex;
-  justify-content: space-around;
-  background-color: $white;
-  /*position: fixed;*/
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 4;
-  max-width: 1680px;
-  margin: auto;
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-right: 120px;
+    background-color: $white;
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    max-width: 1680px;
+    height: 100px;
+    margin: 0 auto;
+    .menu {
+      width: 420px;
+    }
+    ul {
+      font-size: 20px;
+      display: flex;
+      height: 100px;
+      margin: 0;
+      li {
+        padding-left: 24px;
+        margin: auto;
+      }
+    }
+  }
+  .header__pic {
+    height: 100px;
+    margin: 0;
+    img {
+      width: 150px;
+      height: 50px;
+      margin: 25px;
+      text-align: center;
+    }
+  }
+
+  .search {
+    border: solid 1px $border;
+    border-radius: 12px;
+    width: 402px;
+    height: 50px;
+    margin: 25px;
+    display: flex;
+    input {
+      outline: none !important;
+      border: none;
+      font-size: 16px;
+    }
+    img {
+      width: 16px;
+      height: 16px;
+      margin: 17px;
+    }
+  }
+
+  .leftSide,
+  .rightSide {
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  .wrapperSearch {
+    height: 100px;
+  }
+  .loginButtons {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px;
+
+    img {
+      height: 32px;
+    }
+    .icons__header {
+      padding-right: 32px;
+    }
+  }
 }

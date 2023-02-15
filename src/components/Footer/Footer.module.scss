@@ -1,0 +1,71 @@
+@import '../../colors.scss';
+$sizes: (
+  'xs': 320px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+.wrapper {
+  background-color: $footer;
+
+  footer {
+    padding-left: 120px;
+    padding-right: 120px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $footer;
+    color: $white;
+    font-size: 16px;
+    max-width: 1680px;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+  .leftSide,
+  .rightSide {
+    padding-top: 48px;
+    margin-bottom: 48px;
+  }
+  p,
+  a {
+    font-size: 16px;
+    color: $white;
+  }
+  ul {
+    display: flex;
+    cursor: pointer;
+    padding: 0;
+    li {
+      padding-right: 24px;
+    }
+  }
+
+  .textedArea,
+  .website {
+    display: flex;
+    justify-content: left;
+  }
+  .textedArea {
+    padding-top: 20px;
+    p {
+      padding-right: 28px;
+    }
+  }
+  .rightSide {
+    p {
+      padding-top: 8px;
+      margin: 0;
+    }
+  }
+  .media,
+  .rightTextedArea {
+    display: flex;
+    justify-content: right;
+  }
+  .media {
+    img {
+      padding-left: 16px;
+      padding-bottom: 16px;
+    }
+  }
+}
