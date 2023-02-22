@@ -1,0 +1,61 @@
+@import '../../colors.scss';
+
+.wrapper {
+  margin-left: 120px;
+  margin-right: 120px;
+
+  .form {
+    button {
+      margin-top: 8px;
+      margin-right: 0px;
+      margin-left: auto;
+    }
+    p {
+      width: 100%;
+    }
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    .address {
+      display: flex;
+      .form_item {
+        width: 100px;
+        margin-right: 4px;
+        input {
+          width: 100%;
+          padding-right: 0px;
+        }
+      }
+    }
+    .form_item {
+      width: 560px;
+      margin-top: 8px;
+      border: 1px solid $border;
+      border-radius: 8px;
+      display: flex;
+      width: 400px;
+      select {
+        height: 50px;
+        width: 90%;
+        margin-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        text-decoration: none;
+        background-color: $white;
+        border: 1px solid $white;
+        color: $lightGrayText;
+        option {
+          border: 1px solid $white;
+          color: $lightOrange;
+        }
+      }
+      input {
+        outline: none !important;
+        border: none;
+        padding-left: 16px;
+        width: 360px;
+      }
+    }
+  }
+}
