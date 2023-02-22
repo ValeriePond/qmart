@@ -1,0 +1,33 @@
+@import '../../colors.scss';
+
+.wrapper {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding-left: 120px;
+  padding-right: 120px;
+
+  .topSector {
+    display: flex;
+    justify-content: flex-start;
+    img {
+      width: 400px;
+      height: 400px;
+      border-radius: 24px;
+    }
+    div {
+      padding-top: 36px;
+      padding-left: 36px;
+      width: 970px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+
+  .advantage {
+    p {
+      font-size: 24px;
+      padding-bottom: 36px;
+    }
+  }
+}

@@ -6,22 +6,32 @@ export const Header = (props) => {
     <div className={styles.wrapper}>
       <header>
         <div className={styles.leftSide}>
-          <a className={styles.header__pic} to="/">
-            <img src="images/logo.svg" className={styles.logo__pic} alt=""></img>
-          </a>
-          <div className="menu">
-            <ul className="headerLinkAll">
-              <li className="headerLink">
-                <Link to="/catalog">Каталог</Link>
+          <Link to="/">
+            <a className={styles.header__pic} to="/">
+              <img src="images/logo.svg" className={styles.logo__pic} alt=""></img>
+            </a>
+          </Link>
+          <div className={styles.menu}>
+            <ul className={styles.headerLinkAll}>
+              <li className={styles.headerLink}>
+                <Link to="/catalog">
+                  <div>Каталог</div>
+                </Link>
               </li>
-              <li className="headerLink">
-                <Link to="/">О нас</Link>
+              <li className={styles.headerLink}>
+                <Link to="/about">
+                  <div>О нас</div>
+                </Link>
               </li>
-              <li className="headerLink">
-                <Link to="/contacts">Контакты</Link>
+              <li className={styles.headerLink}>
+                <Link to="/contacts">
+                  <div>Контакты</div>
+                </Link>
               </li>
-              <li className="headerLink">
-                <Link to="/faq">FAQ</Link>
+              <li className={styles.headerLink}>
+                <Link to="/faq">
+                  <div>FAQ</div>
+                </Link>
               </li>
             </ul>
           </div>
@@ -29,15 +39,15 @@ export const Header = (props) => {
         <div className={styles.rightSide}>
           <div className={styles.search}>
             <img src="images/search.svg"></img>
-            <input value="Искать"></input>
+            <input placeholder="Искать"></input>
           </div>
           <div className={styles.loginButtons}>
-            <a class={styles.icons__header}>
-              <img src="images/cart.svg"></img>
-            </a>
-            <a class={styles.icons__header}>
-              <img src="images/user.svg"></img>
-            </a>
+            <Link to="/cart">
+              <img class={styles.icons__header} src="images/cart.svg"></img>
+            </Link>
+            <Link to="/registration">
+              <img class={styles.icons__header} src="images/user.svg"></img>
+            </Link>
           </div>
         </div>
       </header>

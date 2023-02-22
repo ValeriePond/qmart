@@ -1,0 +1,33 @@
+@import '../../colors.scss';
+.card_home {
+  position: relative;
+  width: 320px;
+  text-align: left;
+  margin-right: 40px;
+  margin-bottom: 40px;
+
+  font-size: 40px;
+  img {
+    width: 320px;
+    height: 320px;
+    border-radius: 24px;
+    filter: brightness(70%);
+  }
+
+  .text {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 36px;
+    color: $white;
+    font-weight: 700;
+  }
+  &:hover {
+    img {
+      filter: brightness(50%);
+    }
+    .text {
+      font-size: 40px;
+    }
+  }
+}

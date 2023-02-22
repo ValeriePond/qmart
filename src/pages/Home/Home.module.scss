@@ -1,0 +1,43 @@
+@import '../../colors.scss';
+.wrapper {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding-left: 120px;
+  padding-right: 120px;
+  h1 {
+    margin-top: 48px;
+  }
+  .catalogHover {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px;
+  }
+  .description {
+    h1 {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .map {
+    h3 {
+      text-align: left;
+      margin-top: 80px;
+      margin-bottom: 40px;
+    }
+  }
+  .delivery {
+    margin-top: 36px;
+    .price {
+      color: $pinkText;
+    }
+    p {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+  }
+}
