@@ -1,0 +1,122 @@
+@import '../../colors.scss';
+
+.wrapper {
+  margin: 0px 120px 40px 120px;
+
+  .main {
+    display: flex;
+    .category {
+      color: $lightGreen;
+    }
+    .filters {
+      width: 340px;
+      .categories {
+        border: 1px solid $border;
+        border-radius: 24px;
+        margin-bottom: 16px;
+        padding: 20px 12px;
+        a {
+          color: $pinkText;
+        }
+        hr {
+          margin-top: 16px;
+          margin-bottom: 4px;
+        }
+      }
+      .sortItems {
+        margin-top: 24px;
+        margin-bottom: 24px;
+      }
+      .sort {
+        display: flex;
+        justify-content: space-between;
+        p {
+          font-size: 18px;
+          margin: 2px;
+        }
+      }
+      .categoriesWay {
+        display: flex;
+        p {
+          font-size: 18px;
+          margin: 0;
+          font-weight: 700;
+        }
+        img {
+          padding-bottom: 5px;
+          margin: 2px 4px 0px 4px;
+        }
+      }
+      .price {
+        hr {
+          margin-top: 16px;
+          margin-bottom: 4px;
+        }
+        a {
+          color: $pinkText;
+        }
+        border: 1px solid $border;
+        border-radius: 24px;
+        padding: 20px 12px;
+        p {
+          font-size: 18px;
+          margin: 0;
+          font-weight: 700;
+        }
+        .priceFilter {
+          margin: 24px auto;
+          display: flex;
+          justify-content: space-between;
+          width: 200px;
+          input {
+            width: 80px;
+            padding-left: 12px;
+            height: 48px;
+          }
+        }
+      }
+    }
+  }
+  .tags {
+    display: flex;
+    margin-bottom: 16px;
+    select {
+      height: 36.6px;
+      border: 1px solid $lightGreen;
+      padding: 4px 8px;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-left: 16px;
+      background-color: $lightGreen;
+      color: $white;
+      option {
+        border-radius: 8px;
+        background-color: $white;
+        color: $lightGrayText;
+      }
+    }
+    .tag_name {
+      display: flex;
+      div {
+        border: 1px solid $border;
+        padding: 4px 8px;
+        border-radius: 8px;
+        font-size: 18px;
+        margin-left: 16px;
+        cursor: pointer;
+        &:hover {
+          background-color: $lightOrange;
+          color: $white;
+        }
+      }
+    }
+  }
+  .itemList {
+    margin-left: 40px;
+  }
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+}

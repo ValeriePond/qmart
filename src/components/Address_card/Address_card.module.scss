@@ -1,0 +1,37 @@
+@import '../../colors.scss';
+
+.wrapper {
+  width: 280px;
+  height: 224px;
+  border: 1px solid $lightOrange;
+  border-radius: 24px;
+  margin-bottom: 32px;
+  hr {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .main {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px auto;
+    margin-top: 32px;
+    width: 200px;
+    h2 {
+      padding-top: 4px;
+      color: black;
+      margin: 0;
+    }
+    img {
+      width: 40px;
+    }
+  }
+  .address {
+    width: 200px;
+    margin: 24px auto;
+    margin-top: 8px;
+    p {
+      margin: 0;
+      font-size: 20px;
+    }
+  }
+}

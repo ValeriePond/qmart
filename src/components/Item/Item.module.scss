@@ -1,0 +1,96 @@
+@import '../../colors.scss';
+
+.wrapper {
+  width: 300px;
+  height: 470px;
+  margin: 4px;
+  border-radius: 24px;
+  background-color: #fff1e5;
+  .photo {
+    position: relative;
+
+    .photoTop {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      margin: 30px 30px 0px 40px;
+
+      .favorites {
+        width: 32px;
+      }
+      .rating {
+        display: flex;
+        margin-right: 150px;
+
+        img {
+          width: 13px;
+          height: 21px;
+        }
+        p {
+          font-size: 16px;
+          padding: 0;
+          margin: 0;
+          padding-left: 4px;
+        }
+      }
+    }
+    .mainPhoto {
+      margin: 20px 30px 0px 30px;
+      width: 240px;
+      border-radius: 12px;
+    }
+  }
+  .name {
+    margin-left: 30px;
+    margin-top: 8px;
+    p {
+      font-size: 14px;
+      color: $darkGreen;
+      margin: 0;
+    }
+    h3 {
+      font-size: 20px;
+      text-align: left;
+      width: 250px;
+    }
+  }
+  .total {
+    display: flex;
+    margin: 16px 30px 0px 30px;
+    justify-content: space-between;
+    .count {
+      width: 48px;
+      height: 36px;
+      border: 1px solid $lightOrange;
+      margin: 0px 4px;
+      border-radius: 4px;
+    }
+    .price {
+      display: flex;
+      font-size: 24px;
+      font-weight: 700;
+      color: $mainOrange;
+      p {
+        margin-right: 8px;
+      }
+    }
+    .counter {
+      display: flex;
+      p {
+        text-align: center;
+      }
+      button {
+        background-color: $mainOrange;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+      }
+    }
+  }
+  .add {
+    margin-bottom: 24px;
+    div {
+      font-size: 18px;
+    }
+  }
+}

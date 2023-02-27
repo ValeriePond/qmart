@@ -5,13 +5,12 @@
   display: flex;
   justify-content: space-between;
   .main {
-    border: 1px solid $border;
+    //border: 1px solid $border;
     border-radius: 24px;
-    width: 56%;
-    height: 480px;
-    img {
+    width: 65%;
+    /*img {
       padding-top: 48px;
-    }
+    }*/
     hr {
       width: 300px;
       margin: 0 auto;
@@ -33,8 +32,8 @@
   .total {
     border: 1px solid $border;
     border-radius: 24px;
-    margin-left: 24px;
-    width: 32%;
+    margin-left: 8px;
+    //width: 35%;
     padding: 40px 24px 48px 24px;
     h3 {
       text-align: start;

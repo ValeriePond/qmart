@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
+import { Address_card } from '../../components/Address_card';
 import styles from './Addresses.module.scss';
 
 export const Addresses = (props) => {
   return (
     <div className={styles.wrapper}>
       <h1>Сохраненные адреса</h1>
-      <section></section>
+      <section>
+        <Address_card />
+      </section>
       <section>
         <p>Добавить адрес доставки</p>
         <div className={styles.form}>
