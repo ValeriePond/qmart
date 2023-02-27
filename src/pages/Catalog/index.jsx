@@ -2,7 +2,29 @@ import { Link } from 'react-router-dom';
 import styles from './Catalog.module.scss';
 import { Item } from '../../components/Item';
 
-export const Catalog = (props) => {
+export const Catalog = ({
+  categories,
+  items,
+  onAddToCart,
+  setItemOpened,
+  onShowItem,
+  count,
+  minus,
+  plus,
+  minusPc,
+  plusPc,
+  onChangeSort,
+  setCount,
+  sortType,
+}) => {
+  /*const categoriesSection = categories.category;*/
+  const sorting = [
+    { name: 'названию ↑', sortP: 'title' },
+    { name: 'названию ↓', sortP: '-title' },
+    { name: 'цене ↑', sortP: 'price' },
+    { name: 'цене ↓', sortP: '-price' },
+  ];
+
   return (
     <div className={styles.wrapper}>
       <h1>Каталог</h1>
@@ -16,14 +38,12 @@ export const Catalog = (props) => {
             </div>
             <hr></hr>
             <div className={styles.sortItems}>
-              <div className={styles.sort}>
-                <p>Бахчевые</p>
-                <p>1</p>
-              </div>
-              <div className={styles.sort}>
-                <p>Цитрусовые</p>
-                <p>1</p>
-              </div>
+              {categories.map((category) => (
+                <div className={styles.sort}>
+                  <p> {category.Category}</p>
+                  <p>{category.id}</p>
+                </div>
+              ))}
             </div>
             <div>
               <hr></hr>
@@ -49,9 +69,11 @@ export const Catalog = (props) => {
           <section className={styles.tags}>
             <div className={styles.mainTags}>
               <select>
-                <option>По алфавиту</option>
-                <option>По цене вниз</option>
-                <option>По цене вверх</option>
+                {sorting.map((obj, i) => (
+                  <option key={i} onClick={() => onChangeSort(obj)}>
+                    {obj.name}
+                  </option>
+                ))}
               </select>
             </div>
             <div className={styles.tag_name}>
@@ -61,10 +83,34 @@ export const Catalog = (props) => {
             </div>
           </section>
           <section className={styles.items}>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
+            {items.map((item) => (
+              <Item
+                key={item.id}
+                id={item.id}
+                company={item.company}
+                imageUrl={item.imageUrl}
+                title={item.title}
+                price={item.price}
+                description={item.description}
+                category={item.category}
+                category_type={item.category_type}
+                rating={item.rating}
+                weight={item.weight}
+                season={item.season}
+                hit={item.hit}
+                sale={item.sale}
+                onCart={(obj) => onAddToCart(obj)}
+                onClickItem={() => setItemOpened(true)}
+                onShow={(obj) => onShowItem(obj)}
+                setCount={setCount}
+                count={count}
+                minus={minus}
+                plus={plus}
+                minusPc={minusPc}
+                plusPc={plusPc}
+                {...item}
+              />
+            ))}
           </section>
         </div>
       </div>

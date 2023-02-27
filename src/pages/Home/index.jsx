@@ -3,20 +3,15 @@ import { Item_catalog_hover } from '../../components/Item_catalog_hover';
 import { MyComponent } from '../../components/MyComponent';
 import styles from './Home.module.scss';
 
-export const Home = (props) => {
+export const Home = ({ categories }) => {
   return (
     <div className={styles.wrapper}>
       <Slider />
       <h1>Каталог</h1>
       <section className={styles.catalogHover}>
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
-        <Item_catalog_hover />
+        {categories.map((item) => (
+          <Item_catalog_hover key={item.id} imageUrl={item.ImageUrl} category={item.Category} />
+        ))}
       </section>
       <section className={styles.description}>
         <h1>Всегда свежее. Всегда вовремя.</h1>
