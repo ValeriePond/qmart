@@ -146,8 +146,6 @@ function App() {
               setCount={setCount}
               plus={plus}
               minus={minus}
-              plusPc={plusPc}
-              minusPc={minusPc}
             />
           </Route>
           <Route path="/faq" exact>

@@ -11,24 +11,51 @@ export const Item = ({
   category_type,
   rating,
   weight,
-  season,
-  hit,
-  sale,
+  tags,
   onCart,
   onClickItem,
   onShow,
   count,
   setCount,
-  plus,
-  minus,
-  plusPc,
-  minusPc,
 }) => {
   const onClickCart = () => {
     onCart({ id, title, imageUrl, price, count });
   };
+  const plus = () => {
+    if (weight == 'кг') {
+      setCount(count + 0.5);
+    } else {
+      setCount(count + 1);
+    }
+  };
+
+  const minus = () => {
+    if (weight == 'кг') {
+      setCount(count - 0.5);
+    } else {
+      setCount(count - 1);
+    }
+  };
+
+  const onClickMore = () => {
+    onShow({
+      id,
+      title,
+      imageUrl,
+      price,
+      count,
+      description,
+      weight,
+      tags,
+      rating,
+      count,
+      setCount,
+      onClickCart,
+    });
+    onClickItem();
+  };
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={onClickMore}>
       <div className={styles.photo}>
         <div className={styles.photoTop}>
           <div className={styles.rating}>

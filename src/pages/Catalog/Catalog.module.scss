@@ -33,6 +33,11 @@
         p {
           font-size: 18px;
           margin: 2px;
+          color: black;
+          cursor: pointer;
+          &:hover {
+            color: $mainOrange;
+          }
         }
       }
       .categoriesWay {

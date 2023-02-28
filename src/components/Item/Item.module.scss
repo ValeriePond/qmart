@@ -2,10 +2,14 @@
 
 .wrapper {
   width: 300px;
-  height: 470px;
+  height: 450px;
   margin: 4px;
   border-radius: 24px;
   background-color: #fff1e5;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
   .photo {
     position: relative;
 
@@ -60,18 +64,22 @@
     justify-content: space-between;
     .count {
       width: 48px;
-      height: 36px;
+      height: 32px;
       border: 1px solid $lightOrange;
-      margin: 0px 4px;
+      margin: 0px 2px;
       border-radius: 4px;
+      p {
+        font-size: 20px;
+      }
     }
     .price {
       display: flex;
-      font-size: 24px;
+
       font-weight: 700;
       color: $mainOrange;
       p {
         margin-right: 8px;
+        font-size: 22px;
       }
     }
     .counter {
@@ -81,8 +89,8 @@
       }
       button {
         background-color: $mainOrange;
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         border-radius: 4px;
       }
     }

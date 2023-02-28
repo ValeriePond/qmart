@@ -16,6 +16,7 @@ export const Catalog = ({
   onChangeSort,
   setCount,
   sortType,
+  onClickCategory,
 }) => {
   /*const categoriesSection = categories.category;*/
   const sorting = [
@@ -39,10 +40,10 @@ export const Catalog = ({
             <hr></hr>
             <div className={styles.sortItems}>
               {categories.map((category) => (
-                <div className={styles.sort}>
-                  <p> {category.Category}</p>
+                <a className={styles.sort} onClick={() => onClickCategory(category.Category)}>
+                  <p>{category.Category}</p>
                   <p>{category.id}</p>
-                </div>
+                </a>
               ))}
             </div>
             <div>
