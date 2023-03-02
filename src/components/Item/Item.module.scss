@@ -24,17 +24,25 @@
       }
       .rating {
         display: flex;
-        margin-right: 150px;
+
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 4px;
+        margin: auto 0;
+        margin-right: 140px;
 
         img {
           width: 13px;
           height: 21px;
+          margin: auto 0;
         }
         p {
           font-size: 16px;
           padding: 0;
           margin: 0;
           padding-left: 4px;
+          height: 21px;
+          margin: auto 0;
         }
       }
     }
@@ -97,8 +105,10 @@
   }
   .add {
     margin-bottom: 24px;
+    width: 280px;
     div {
       font-size: 18px;
+      width: 100%;
     }
   }
 }

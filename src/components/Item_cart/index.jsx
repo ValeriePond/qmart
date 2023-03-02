@@ -1,31 +1,48 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
 import styles from './Item_cart.module.scss';
-export const Item_cart = (props) => {
+export const Item_cart = ({ id, title, imageUrl, price, count, weight, onRemove }) => {
+  const [count2, setCount] = React.useState(count);
+  const plus = () => {
+    if (weight === 'кг') {
+      setCount(count2 + 0.5);
+    } else {
+      setCount(count2 + 1);
+    }
+  };
+
+  const minus = () => {
+    if (weight === 'кг') {
+      setCount(count2 - 0.5);
+    } else {
+      setCount(count2 - 1);
+    }
+  };
   return (
     <div className={styles.wrapper}>
-      <img src="images/cards/apple.jpg"></img>
+      <img src={imageUrl}></img>
       <div className={styles.name}>
-        <p>кг</p>
-        <h3>Яблоки золотое превосходное</h3>
+        <p>{weight}</p>
+        <h3>{title}</h3>
       </div>
       <div className={styles.counter}>
-        <button>
+        <button onClick={minus}>
           <img src="images/minus.svg"></img>
         </button>
         <div>
-          <p>1</p>
+          <p>{count2}</p>
         </div>
-        <button>
+        <button onClick={plus}>
           <img src="images/plus.svg"></img>
         </button>
       </div>
       <div className={styles.price}>
-        <p>776</p>
+        <p>{price}</p>
         <p>тг</p>
       </div>
-      <Link to="/">
+      <a onClick={onRemove}>
         <img src="images/trash.svg"></img>
-      </Link>
+      </a>
     </div>
   );
 };

@@ -11,12 +11,12 @@ export const Catalog = ({
   count,
   minus,
   plus,
-  minusPc,
-  plusPc,
   onChangeSort,
   setCount,
   sortType,
   onClickCategory,
+  onRemoveFavorite,
+  onAddToFavorite,
 }) => {
   /*const categoriesSection = categories.category;*/
   const sorting = [
@@ -97,9 +97,6 @@ export const Catalog = ({
                 category_type={item.category_type}
                 rating={item.rating}
                 weight={item.weight}
-                season={item.season}
-                hit={item.hit}
-                sale={item.sale}
                 onCart={(obj) => onAddToCart(obj)}
                 onClickItem={() => setItemOpened(true)}
                 onShow={(obj) => onShowItem(obj)}
@@ -107,8 +104,7 @@ export const Catalog = ({
                 count={count}
                 minus={minus}
                 plus={plus}
-                minusPc={minusPc}
-                plusPc={plusPc}
+                onFavorite={(obj) => onAddToFavorite(obj)}
                 {...item}
               />
             ))}

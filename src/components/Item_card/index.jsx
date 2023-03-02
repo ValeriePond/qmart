@@ -2,29 +2,28 @@ import React from 'react';
 import AppContext from '../context';
 
 import styles from './Item_card.module.scss';
-export const Item_card = ({ onClose, items = [], setCount, onCart, count, onClickCart }) => {
+export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
   const [openId, setOpenId] = React.useState('');
 
   const toggleDetails = (thingId) => {
     setOpenId(thingId);
   };
 
-  /*const onClickCart = () => {
-    onCart({ id, title, imageUrl, price, count });
-  };*/
-  const plus = (obj) => {
-    if (obj.weight == 'кг') {
-      setCount(obj.count + 0.5);
+  const [count, setCount] = React.useState(1);
+  //weight = obj.weight;
+  const plus = (weight) => {
+    if (weight === 'кг') {
+      setCount(count + 0.5);
     } else {
-      setCount(obj.count + 1);
+      setCount(count + 1);
     }
   };
 
-  const minus = (obj) => {
-    if (obj.weight == 'кг') {
-      setCount(obj.count - 0.5);
+  const minus = (weight) => {
+    if (weight === 'кг') {
+      setCount(count - 0.5);
     } else {
-      setCount(obj.count - 1);
+      setCount(count - 1);
     }
   };
   return (
@@ -52,10 +51,10 @@ export const Item_card = ({ onClose, items = [], setCount, onCart, count, onClic
               <img className={styles.imgLeft} src={obj.imageUrl} alt="item"></img>
             </div>
             <div className={styles.right}>
-              <p>{obj.company}</p>
-              <h2>{obj.title}</h2>
+              <p className={styles.company}>{obj.company}</p>
+              <h2 className={styles.title}>{obj.title}</h2>
 
-              <div>{obj.description}</div>
+              <div className={styles.description}>{obj.description}</div>
               <div className={styles.price}>
                 <p>{obj.price}</p>
                 <p>тг/{obj.weight}</p>
@@ -66,13 +65,13 @@ export const Item_card = ({ onClose, items = [], setCount, onCart, count, onClic
                     <img src="images/minus.svg" alt="" />
                   </button>
                   <div className={styles.count}>
-                    <p>{obj.count}</p>
+                    <p>{count}</p>
                   </div>
                   <button className={styles.weight} onClick={plus}>
                     <img src="images/plus.svg" alt="" />
                   </button>
                 </div>
-                <div>
+                <div className={styles.favorites}>
                   <img src="images/favorites1.svg"></img>
                 </div>
               </div>
