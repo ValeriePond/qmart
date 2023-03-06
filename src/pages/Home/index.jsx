@@ -10,7 +10,7 @@ export const Home = ({ categories }) => {
       <h1>Каталог</h1>
       <section className={styles.catalogHover}>
         {categories.map((item) => (
-          <Item_catalog_hover key={item.id} imageUrl={item.ImageUrl} category={item.Category} />
+          <Item_catalog_hover key={item.id} imageUrl={item.imageUrl} category={item.category} />
         ))}
       </section>
       <section className={styles.description}>

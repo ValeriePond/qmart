@@ -4,6 +4,9 @@ import axios from 'axios';
 import './App.css';
 import './index.scss';
 
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Item_card } from './components/Item_card';
@@ -24,9 +27,17 @@ import { Order } from './pages/Order';
 import { Confirm } from './pages/Confirm';
 import { Favorites } from './pages/Favorites';
 
+import { Fruits } from './pages/Catalog/Fruits';
+import { Drinks } from './pages/Catalog/Drinks';
+import { Bread } from './pages/Catalog/Bread';
+import { Vegetables } from './pages/Catalog/Vegetables';
+import { Sweets } from './pages/Catalog/Sweets';
+
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
+  const [categoryType, setCategoryType] = React.useState([]);
+
   const [items, setItems] = React.useState([]);
   const [categories, setCategories] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
@@ -39,6 +50,38 @@ function App() {
     sortP: 'price',
   });
   const [count, setCount] = React.useState(1);
+  const { createSliderWithTooltip } = Slider;
+  const Range = createSliderWithTooltip(Slider.Range);
+  const [price, setPrice] = React.useState([1, 100000]);
+
+  const [activeState1, setActiveState1] = React.useState(false);
+  const [activeState2, setActiveState2] = React.useState(false);
+  const [activeState3, setActiveState3] = React.useState(false);
+
+  const setTag1 = () => {
+    if (activeState1 == false) {
+      setActiveState1(true);
+    }
+    if (activeState1 == true) {
+      setActiveState1(false);
+    }
+  };
+  const setTag2 = () => {
+    if (activeState2 == false) {
+      setActiveState2(true);
+    }
+    if (activeState2 == true) {
+      setActiveState2(false);
+    }
+  };
+  const setTag3 = () => {
+    if (activeState3 == false) {
+      setActiveState3(true);
+    }
+    if (activeState3 == true) {
+      setActiveState3(false);
+    }
+  };
 
   const plus = () => {
     setCount(count + 0.5);
@@ -159,6 +202,155 @@ function App() {
               plus={plus}
               minus={minus}
               onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
+            />
+          </Route>
+          <Route path="/catalog/fruits" exact>
+            <Fruits
+              items={items}
+              categories={categories}
+              setItemOpened={setItemOpened}
+              onAddToCart={onAddToCart}
+              onShowItem={onShowItem}
+              category={categoryName}
+              onClickCategory={(category) => setCategory(category)}
+              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              sortType={sortType}
+              onChangeSort={(i) => setSort(i)}
+              count={count}
+              setCount={setCount}
+              plus={plus}
+              minus={minus}
+              onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
+            />
+          </Route>
+          <Route path="/catalog/drinks" exact>
+            <Drinks
+              items={items}
+              categories={categories}
+              setItemOpened={setItemOpened}
+              onAddToCart={onAddToCart}
+              onShowItem={onShowItem}
+              category={categoryName}
+              onClickCategory={(category) => setCategory(category)}
+              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              sortType={sortType}
+              onChangeSort={(i) => setSort(i)}
+              count={count}
+              setCount={setCount}
+              plus={plus}
+              minus={minus}
+              onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
+            />
+          </Route>
+          <Route path="/catalog/vegetables" exact>
+            <Vegetables
+              items={items}
+              categories={categories}
+              setItemOpened={setItemOpened}
+              onAddToCart={onAddToCart}
+              onShowItem={onShowItem}
+              category={categoryName}
+              onClickCategory={(category) => setCategory(category)}
+              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              sortType={sortType}
+              onChangeSort={(i) => setSort(i)}
+              count={count}
+              setCount={setCount}
+              plus={plus}
+              minus={minus}
+              onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
+            />
+          </Route>
+          <Route path="/catalog/sweets" exact>
+            <Sweets
+              items={items}
+              categories={categories}
+              setItemOpened={setItemOpened}
+              onAddToCart={onAddToCart}
+              onShowItem={onShowItem}
+              category={categoryName}
+              onClickCategory={(category) => setCategory(category)}
+              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              sortType={sortType}
+              onChangeSort={(i) => setSort(i)}
+              count={count}
+              setCount={setCount}
+              plus={plus}
+              minus={minus}
+              onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
+            />
+          </Route>
+          <Route path="/catalog/bread" exact>
+            <Bread
+              items={items}
+              categories={categories}
+              setItemOpened={setItemOpened}
+              onAddToCart={onAddToCart}
+              onShowItem={onShowItem}
+              category={categoryName}
+              onClickCategory={(category) => setCategory(category)}
+              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              sortType={sortType}
+              onChangeSort={(i) => setSort(i)}
+              count={count}
+              setCount={setCount}
+              plus={plus}
+              minus={minus}
+              onAddToFavorite={onAddToFavorite}
+              setTag1={setTag1}
+              setTag2={setTag2}
+              setTag3={setTag3}
+              activeState1={activeState1}
+              activeState2={activeState2}
+              activeState3={activeState3}
+              price={price}
+              setPrice={setPrice}
+              Range={Range}
             />
           </Route>
           <Route path="/faq" exact>

@@ -44,7 +44,7 @@ export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
                 </div>
                 <div className={styles.tags}>
                   {obj.tags.map((tag) => (
-                    <div className={styles.tag}>{tag}</div>
+                    <div className={styles.tag}>{tag.name}</div>
                   ))}
                 </div>
               </div>

@@ -1,15 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-
-//import '../../index.scss'
-import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
-
 import styles from './Catalog.module.scss';
-
 import { Item } from '../../components/Item';
 
-export const Catalog = ({
+export const Fruits = ({
   categories,
   items,
   onAddToCart,
@@ -22,6 +15,7 @@ export const Catalog = ({
   setCount,
   sortType,
   onClickCategory,
+  onClickCategoryType,
   onAddToFavorite,
   setTag1,
   setTag2,
@@ -34,13 +28,16 @@ export const Catalog = ({
   Range,
 }) => {
   /*const categoriesSection = categories.category;*/
-
   const sorting = [
     { name: 'названию ↑', sortP: 'title' },
     { name: 'названию ↓', sortP: '-title' },
     { name: 'цене ↑', sortP: 'price' },
     { name: 'цене ↓', sortP: '-price' },
   ];
+
+  function filterItems(item, category) {
+    return item.category === 'Фрукты';
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -49,22 +46,26 @@ export const Catalog = ({
         <section className={styles.filters}>
           <div className={styles.categories}>
             <div className={styles.categoriesWay}>
-              <p className={styles.category}>Категории</p>
+              <Link to="/catalog">
+                <p className={styles.category}>Категории</p>
+              </Link>
+              <img src="images/arrow.svg"></img>
+              <p>Фрукты</p>
             </div>
             <hr></hr>
             <div className={styles.sortItems}>
-              {categories.map((category, i) => (
-                <Link to={'/catalog' + category.categoryUrl}>
-                  <a
-                    key={i}
-                    className={styles.sort}
-                    //onClick={() => onClickCategory(category.category)}
-                  >
-                    <p>{category.category}</p>
-                    <p>{category.id}</p>
-                  </a>
-                </Link>
-              ))}
+              {
+                categories.map((category, i) => (
+                  <div>
+                    {category.category_type.map((value, i) => (
+                      <a key={i} className={styles.sort} onClick={() => onClickCategoryType(value)}>
+                        <p>{value}</p>
+                        <p>{category.id}</p>
+                      </a>
+                    ))}
+                  </div>
+                ))[1]
+              }
             </div>
             <div>
               <hr></hr>
@@ -128,7 +129,7 @@ export const Catalog = ({
             </div>
           </section>
           <section className={styles.items}>
-            {items.map((item, i) => (
+            {items.filter(filterItems).map((item, i) => (
               <Item
                 key={i}
                 id={item.id}

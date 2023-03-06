@@ -75,3 +75,7 @@ input {
   display: flex;
   justify-content: center;
 }
+.active {
+  background-color: $lightOrange;
+  color: $white;
+}
