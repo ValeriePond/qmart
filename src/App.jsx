@@ -10,6 +10,7 @@ import 'rc-slider/assets/index.css';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Item_card } from './components/Item_card';
+import { Login } from './components/Login';
 
 import AppContext from './components/context';
 import { FAQ } from './pages/FAQ';
@@ -39,6 +40,8 @@ function App() {
   const [categoryType, setCategoryType] = React.useState([]);
 
   const [items, setItems] = React.useState([]);
+
+  const [profileOpened, setProfileOpened] = React.useState(false);
   const [categories, setCategories] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
@@ -57,6 +60,15 @@ function App() {
   const [activeState1, setActiveState1] = React.useState(false);
   const [activeState2, setActiveState2] = React.useState(false);
   const [activeState3, setActiveState3] = React.useState(false);
+
+  const setProfile = () => {
+    if (profileOpened == false) {
+      setProfileOpened(true);
+    }
+    if (profileOpened == true) {
+      setProfileOpened(false);
+    }
+  };
 
   const setTag1 = () => {
     if (activeState1 == false) {
@@ -178,10 +190,12 @@ function App() {
         setCartItems,
         onAddToFavorite,
         favorites,
+        setProfileOpened,
       }}>
       <div className="App">
         {itemOpened && <Item_card onClose={() => setItemOpened(false)} items={showItems} />}
-        <Header />
+        <Login onClose={() => setProfileOpened(false)} opened={profileOpened}></Login>
+        <Header onClickProfile={setProfile} />
         <Switch>
           <Route path="/" exact>
             <Home categories={categories} />

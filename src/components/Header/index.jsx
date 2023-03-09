@@ -45,9 +45,9 @@ export const Header = (props) => {
             <Link to="/cart">
               <img class={styles.icons__header} src="images/cart.svg"></img>
             </Link>
-            <Link to="/registration">
+            <a onClick={props.onClickProfile}>
               <img class={styles.icons__header} src="images/user.svg"></img>
-            </Link>
+            </a>
           </div>
         </div>
       </header>
