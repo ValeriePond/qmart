@@ -40,7 +40,7 @@ function App() {
   const [categoryType, setCategoryType] = React.useState([]);
 
   const [items, setItems] = React.useState([]);
-
+  const [searchValue, setSearchValue] = React.useState('');
   const [profileOpened, setProfileOpened] = React.useState(false);
   const [categories, setCategories] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
@@ -68,6 +68,10 @@ function App() {
     if (profileOpened == true) {
       setProfileOpened(false);
     }
+  };
+
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
   };
 
   const setTag1 = () => {
@@ -225,6 +229,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/catalog/fruits" exact>

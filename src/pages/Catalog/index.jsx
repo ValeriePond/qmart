@@ -32,8 +32,41 @@ export const Catalog = ({
   price,
   setPrice,
   Range,
+  searchValue,
+  setSearchValue,
+  onChangeSearchInput,
 }) => {
   /*const categoriesSection = categories.category;*/
+
+  const renderItems = () => {
+    const filtredItems = items.filter((item) =>
+      item.title.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+    return filtredItems.map((item, index) => (
+      <Item
+        key={index}
+        id={item.id}
+        company={item.company}
+        imageUrl={item.imageUrl}
+        title={item.title}
+        price={item.price}
+        description={item.description}
+        category={item.category}
+        category_type={item.category_type}
+        rating={item.rating}
+        weight={item.weight}
+        onCart={(obj) => onAddToCart(obj)}
+        onClickItem={() => setItemOpened(true)}
+        onShow={(obj) => onShowItem(obj)}
+        setCount={setCount}
+        count={count}
+        minus={minus}
+        plus={plus}
+        onFavorite={(obj) => onAddToFavorite(obj)}
+        {...item}
+      />
+    ));
+  };
 
   const sorting = [
     { name: 'названию ↑', sortP: 'title' },
@@ -115,20 +148,29 @@ export const Catalog = ({
                 ))}
               </select>
             </div>
-            <div className={styles.tag_name}>
-              <div onClick={setTag1} className={`${activeState1 ? 'active' : ''}`}>
-                Со скидкой
+            <div className={styles.filterItems}>
+              <div className={styles.tag_name}>
+                <div onClick={setTag1} className={`${activeState1 ? 'active' : ''}`}>
+                  Со скидкой
+                </div>
+                <div onClick={setTag2} className={`${activeState2 ? 'active' : ''}`}>
+                  Популярное
+                </div>
+                <div onClick={setTag3} className={`${activeState3 ? 'active' : ''}`}>
+                  Сезонное
+                </div>
               </div>
-              <div onClick={setTag2} className={`${activeState2 ? 'active' : ''}`}>
-                Популярное
-              </div>
-              <div onClick={setTag3} className={`${activeState3 ? 'active' : ''}`}>
-                Сезонное
+              <div className={styles.search}>
+                <img src="images/search.svg"></img>
+                <input
+                  onChange={onChangeSearchInput}
+                  value={searchValue}
+                  placeholder="Искать"></input>
               </div>
             </div>
           </section>
           <section className={styles.items}>
-            {items.map((item, i) => (
+            {/*{items.map((item, i) => (
               <Item
                 key={i}
                 id={item.id}
@@ -151,7 +193,8 @@ export const Catalog = ({
                 onFavorite={(obj) => onAddToFavorite(obj)}
                 {...item}
               />
-            ))}
+            ))}*/}
+            {renderItems()}
           </section>
         </div>
       </div>

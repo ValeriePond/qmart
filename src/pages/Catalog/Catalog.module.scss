@@ -120,6 +120,29 @@
         }
       }
     }
+    .search {
+      border: solid 1px $border;
+      border-radius: 8px;
+      width: 300px;
+      height: 36px;
+      display: flex;
+      margin-left: 380px;
+      input {
+        outline: none !important;
+        border: none;
+        font-size: 16px;
+        height: 34px;
+        width: 290px;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+        margin: 10px;
+      }
+    }
+    .filterItems {
+      display: flex;
+    }
   }
   .itemList {
     margin-left: 40px;
