@@ -5,7 +5,6 @@ import AppContext from '../../components/context';
 
 import axios from 'axios';
 import React from 'react';
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const Cart = ({ onRemove, items = [] }) => {
   const { cartItems, setCartItems } = React.useContext(AppContext);
@@ -14,25 +13,6 @@ export const Cart = ({ onRemove, items = [] }) => {
   const totalPrice = cartItems.reduce((sum, obj) => obj.price * obj.count + sum, 0);
   const totalItems = cartItems.reduce((sum, obj) => obj.count + sum, 0);
   const totalWeight = cartItems.reduce((sum, obj) => obj.price + sum, 0);
-
-  const onClickOrder = async () => {
-    try {
-      const { data } = await axios.post('https://6298d5d6f2decf5bb74cc366.mockapi.io/orders', {
-        items: cartItems,
-      });
-      setOrderId(data.id);
-      setIsOrderComplete(true);
-      setCartItems([]);
-
-      for (let i = 0; i < cartItems.length; i++) {
-        const item = cartItems[i];
-        await axios.delete('https://6298d5d6f2decf5bb74cc366.mockapi.io/cart/' + item.id);
-        await delay(1000);
-      }
-    } catch (error) {
-      alert('Ошибка при создании заказа :(');
-    }
-  };
 
   return (
     <div className={styles.wrapper}>
@@ -68,18 +48,18 @@ export const Cart = ({ onRemove, items = [] }) => {
         <hr></hr>
         <div className={styles.total_item}>
           <p>Общий вес заказа:</p>
-          <p className={styles.count}>{totalWeight} кг</p>
+          <p className={styles.count}>{totalItems} кг</p>
         </div>
         <div className={styles.total_item}>
           <p>Всего товаров:</p>
-          <p className={styles.count}>{totalItems} шт</p>
+          <p className={styles.count}>{items.length} шт</p>
         </div>
         <div className={styles.total_item_1}>
           <h3>Итого:</h3>
           <h3 className={styles.count}>{totalPrice} тг</h3>
         </div>
         <Link to="/confirm">
-          <button onClick={onClickOrder}>
+          <button>
             <div>Оформить заказ</div>
           </button>
         </Link>
