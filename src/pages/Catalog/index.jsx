@@ -88,11 +88,7 @@ export const Catalog = ({
             <div className={styles.sortItems}>
               {categories.map((category, i) => (
                 <Link to={'/catalog' + category.categoryUrl}>
-                  <a
-                    key={i}
-                    className={styles.sort}
-                    //onClick={() => onClickCategory(category.category)}
-                  >
+                  <a key={i} className={styles.sort}>
                     <p>{category.category}</p>
                   </a>
                 </Link>

@@ -18,7 +18,6 @@ export const Bread = ({
   setCount,
   sortType,
   onClickCategory,
-  onClickCategoryType,
   onAddToFavorite,
   setTag1,
   setTag2,
@@ -95,7 +94,7 @@ export const Bread = ({
                 categories.map((category, i) => (
                   <div>
                     {category.category_type.map((value, i) => (
-                      <a key={i} className={styles.sort} onClick={() => onClickCategoryType(value)}>
+                      <a key={i} className={styles.sort} onClick={() => onClickCategory(value)}>
                         <p>{value}</p>
                       </a>
                     ))}

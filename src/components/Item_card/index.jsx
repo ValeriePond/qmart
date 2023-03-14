@@ -2,14 +2,22 @@ import React from 'react';
 import AppContext from '../context';
 
 import styles from './Item_card.module.scss';
-export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
-  const [openId, setOpenId] = React.useState('');
 
-  const toggleDetails = (thingId) => {
-    setOpenId(thingId);
+export const Item_card = ({
+  onClose,
+  items = [],
+  onClickCart,
+  onClickFavorite,
+  count,
+  plus,
+  minus,
+  isFavorite,
+}) => {
+  /*const onClickCart = (obj) => {
+    onCart({ obj });
   };
 
-  const [count, setCount] = React.useState(1);
+ const [count, setCount] = React.useState(1);
   //weight = obj.weight;
   const plus = (weight) => {
     if (weight === 'кг') {
@@ -25,7 +33,7 @@ export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
     } else {
       setCount(count - 1);
     }
-  };
+  };*/
   return (
     <div className="overlay">
       {items.map((obj) => (
@@ -59,7 +67,7 @@ export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
                 <p>{obj.price}</p>
                 <p>тг/{obj.weight}</p>
               </div>
-              <div className={styles.total}>
+              {/*<div className={styles.total}>
                 <div className={styles.counter}>
                   <button className={styles.weight} onClick={minus}>
                     <img src="images/minus.svg" alt="" />
@@ -72,14 +80,18 @@ export const Item_card = ({ onClose, items = [], onCart, onClickCart }) => {
                   </button>
                 </div>
                 <div className={styles.favorites}>
-                  <img src="images/favorites1.svg"></img>
+                  <img
+                    onClick={onClickFavorite}
+                    className={styles.favorites}
+                    src={isFavorite ? 'images/favorites2.svg' : 'images/favorites1.svg'}
+                    alt="Unliked"></img>
                 </div>
               </div>
               <div>
                 <button className={styles.add} onClick={onClickCart}>
                   <div>В корзину</div>
                 </button>
-              </div>
+                  </div>*/}
             </div>
           </div>
         </div>

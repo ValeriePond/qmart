@@ -13,9 +13,7 @@ export const Vegetables = ({
   plus,
   onChangeSort,
   setCount,
-  sortType,
   onClickCategory,
-  onClickCategoryType,
   onAddToFavorite,
   setTag1,
   setTag2,
@@ -27,7 +25,6 @@ export const Vegetables = ({
   setPrice,
   Range,
   searchValue,
-  setSearchValue,
   onChangeSearchInput,
 }) => {
   const renderItems = () => {
@@ -69,7 +66,7 @@ export const Vegetables = ({
     { name: 'цене ↓', sortP: '-price' },
   ];
 
-  function filterItems(item, category) {
+  function filterItems(item) {
     return item.category === 'Овощи';
   }
 
@@ -92,7 +89,7 @@ export const Vegetables = ({
                 categories.map((category, i) => (
                   <div>
                     {category.category_type.map((value, i) => (
-                      <a key={i} className={styles.sort} onClick={() => onClickCategoryType(value)}>
+                      <a key={i} className={styles.sort} onClick={() => onClickCategory(value)}>
                         <p>{value}</p>
                       </a>
                     ))}

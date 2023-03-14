@@ -4,6 +4,7 @@
   border-radius: 16px;
   display: flex;
   margin: 8px 4px;
+  height: 110px;
   img {
     width: 100px;
     height: 100px;
@@ -12,7 +13,7 @@
   }
   .name {
     text-align: start;
-
+    width: 180px;
     margin: auto 24px;
     margin-left: 0px;
     p {
@@ -26,10 +27,10 @@
   .counter {
     display: flex;
     margin: auto 0;
+    width: 100px;
     div {
       width: 56px;
       height: 40px;
-      border: 1px solid $border;
       border-radius: 4px;
       margin: 0 4px;
       p {
@@ -51,6 +52,7 @@
     display: flex;
     margin: auto 16px;
     color: $mainOrange;
+    width: 110px;
 
     font-weight: 700;
     p {

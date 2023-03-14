@@ -26,21 +26,23 @@ export const Item_cart = ({ id, title, imageUrl, price, count, weight, onRemove 
         <h3>{title}</h3>
       </div>
       <div className={styles.counter}>
-        <button onClick={minus}>
+        {/*<button onClick={minus}>
           <img src="images/minus.svg"></img>
-        </button>
+        </button>*/}
         <div>
-          <p>{count2}</p>
+          <p>
+            {count2} {weight}
+          </p>
         </div>
-        <button onClick={plus}>
+        {/*<button onClick={plus}>
           <img src="images/plus.svg"></img>
-        </button>
+        </button>*/}
       </div>
       <div className={styles.price}>
         <p>{price}</p>
         <p>тг</p>
       </div>
-      <a onClick={onRemove}>
+      <a onClick={() => onRemove(id)}>
         <img src="images/trash.svg"></img>
       </a>
     </div>

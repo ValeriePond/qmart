@@ -37,8 +37,6 @@ import { Sweets } from './pages/Catalog/Sweets';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
-  const [categoryType, setCategoryType] = React.useState([]);
-
   const [items, setItems] = React.useState([]);
   const [searchValue, setSearchValue] = React.useState('');
   const [profileOpened, setProfileOpened] = React.useState(false);
@@ -168,7 +166,7 @@ function App() {
             axios.get('https://6298d5d6f2decf5bb74cc366.mockapi.io/Plate'),
             axios.get(
               `https://63fb326b4e024687bf73d265.mockapi.io/items?${
-                categoryName !== 'Все' ? `category=${categoryName}` : ''
+                categoryName !== 'Все' ? `category_type=${categoryName}` : ''
               }&sortBy=${sortBy}&order=${order}`,
             ),
             axios.get('https://63fb326b4e024687bf73d265.mockapi.io/categories'),
@@ -241,9 +239,8 @@ function App() {
               setItemOpened={setItemOpened}
               onAddToCart={onAddToCart}
               onShowItem={onShowItem}
-              category={categoryName}
+              category_type={categoryName}
               onClickCategory={(category) => setCategory(category)}
-              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
               sortType={sortType}
               onChangeSort={(i) => setSort(i)}
               count={count}
@@ -274,7 +271,6 @@ function App() {
               onShowItem={onShowItem}
               category={categoryName}
               onClickCategory={(category) => setCategory(category)}
-              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
               sortType={sortType}
               onChangeSort={(i) => setSort(i)}
               count={count}
@@ -304,8 +300,9 @@ function App() {
               onAddToCart={onAddToCart}
               onShowItem={onShowItem}
               category={categoryName}
-              onClickCategory={(category) => setCategory(category)}
-              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
+              onClickCategory={(category_type) => {
+                setCategory(category_type);
+              }}
               sortType={sortType}
               onChangeSort={(i) => setSort(i)}
               count={count}
@@ -336,7 +333,6 @@ function App() {
               onShowItem={onShowItem}
               category={categoryName}
               onClickCategory={(category) => setCategory(category)}
-              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
               sortType={sortType}
               onChangeSort={(i) => setSort(i)}
               count={count}
@@ -367,7 +363,6 @@ function App() {
               onShowItem={onShowItem}
               category={categoryName}
               onClickCategory={(category) => setCategory(category)}
-              onClickCategoryType={(categoryType) => setCategoryType(categoryType)}
               sortType={sortType}
               onChangeSort={(i) => setSort(i)}
               count={count}

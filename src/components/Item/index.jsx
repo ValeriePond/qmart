@@ -67,22 +67,20 @@ export const Item = ({
       title,
       imageUrl,
       price,
-      count,
       description,
       weight,
       tags,
       rating,
       count,
       company,
-      setCount,
       onClickCart,
-      onRemoveFavorite,
-      onAddToFavorites,
+      onClickFavorite,
+      isFavorite,
     });
     onClickItem();
   };
   return (
-    <div className={styles.overlay} onClick={onClickMore}>
+    <div className={styles.overlay}>
       <div className={styles.wrapper}>
         <div className={styles.photo}>
           <div className={styles.photoTop}>
@@ -124,6 +122,7 @@ export const Item = ({
             <div>В корзину</div>
           </button>
         </div>
+        <span onClick={onClickMore}>подробнее</span>
       </div>
     </div>
   );

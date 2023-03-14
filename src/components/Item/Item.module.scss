@@ -5,7 +5,7 @@
 }
 .wrapper {
   width: 300px;
-  height: 450px;
+  height: 460px;
   margin: 4px;
   border-radius: 24px;
   background-color: #fff1e5;
@@ -111,12 +111,15 @@
     }
   }
   .add {
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     width: 280px;
     z-index: 3;
     div {
       font-size: 18px;
       width: 100%;
     }
+  }
+  span {
+    color: $border;
   }
 }

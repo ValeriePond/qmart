@@ -1,7 +1,36 @@
 import { Link } from 'react-router-dom';
 import styles from './Confirm.module.scss';
+import axios from 'axios';
+import React from 'react';
+import AppContext from '../../components/context';
 
-export const Confirm = (props) => {
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const Confirm = ({ onRemove, items = [] }) => {
+  const { cartItems, setCartItems } = React.useContext(AppContext);
+  const [orderId, setOrderId] = React.useState(null);
+  const [isOrderComplete, setIsOrderComplete] = React.useState(false);
+  const onClickOrder = async () => {
+    try {
+      const { data } = await axios.post('https://6298d5d6f2decf5bb74cc366.mockapi.io/orders', {
+        items: cartItems,
+      });
+      setOrderId(data.id);
+      setIsOrderComplete(true);
+      setCartItems([]);
+
+      for (let i = 0; i < cartItems.length; i++) {
+        const item = cartItems[i];
+        await axios.delete('https://6298d5d6f2decf5bb74cc366.mockapi.io/cart/' + item.id);
+        await delay(1000);
+      }
+    } catch (error) {
+      alert('Ошибка при создании заказа :(');
+    }
+  };
+
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price * obj.count + sum, 0);
+  const finalPrice = totalPrice + (totalPrice * 10) / 100;
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
@@ -89,23 +118,20 @@ export const Confirm = (props) => {
             <hr></hr>
             <div className={styles.total_item}>
               <p>Стоимость заказа</p>
-              <p className={styles.count}>0.00 тг</p>
+              <p className={styles.count}>{totalPrice} тг</p>
             </div>
             <div className={styles.total_item}>
               <p>Чаевые курьеру:</p>
-              <p className={styles.count}>0 %</p>
+              <p className={styles.count}>10 %</p>
             </div>
-            <div className={styles.total_item}>
-              <p>Скидка:</p>
-              <p className={styles.count}>0 тг</p>
-            </div>
+
             <hr></hr>
             <div className={styles.total_item_1}>
               <h3>К оплате:</h3>
-              <h3 className={styles.count}>0.00 тг</h3>
+              <h3 className={styles.count}>{finalPrice} тг</h3>
             </div>
-            <Link to="/confirm">
-              <button>
+            <Link to="/order">
+              <button onClick={onClickOrder}>
                 <div>Подтвердить</div>
               </button>
             </Link>
