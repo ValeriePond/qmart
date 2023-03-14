@@ -260,6 +260,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/catalog/drinks" exact>
@@ -288,6 +291,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/catalog/vegetables" exact>
@@ -316,6 +322,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/catalog/sweets" exact>
@@ -344,6 +353,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/catalog/bread" exact>
@@ -372,6 +384,9 @@ function App() {
               price={price}
               setPrice={setPrice}
               Range={Range}
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              onChangeSearchInput={onChangeSearchInput}
             />
           </Route>
           <Route path="/faq" exact>

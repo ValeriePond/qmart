@@ -96,26 +96,6 @@ a {
     }
   }
 
-  .search {
-    border: solid 1px $border;
-    border-radius: 12px;
-    width: 402px;
-    height: 50px;
-    margin: 25px;
-    display: flex;
-    input {
-      outline: none !important;
-      border: none;
-      font-size: 16px;
-      height: 48px;
-    }
-    img {
-      width: 16px;
-      height: 16px;
-      margin: 17px;
-    }
-  }
-
   .leftSide,
   .rightSide {
     display: flex;
@@ -129,6 +109,7 @@ a {
   .loginButtons {
     display: flex;
     justify-content: space-between;
+    width: 120px;
     margin: 32px;
 
     .icons__header {

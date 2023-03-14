@@ -26,7 +26,41 @@ export const Fruits = ({
   price,
   setPrice,
   Range,
+  searchValue,
+  setSearchValue,
+  onChangeSearchInput,
 }) => {
+  const renderItems = () => {
+    const filtredItems = items.filter((item) =>
+      item.title.toLowerCase().includes(searchValue.toLowerCase()),
+    );
+    return filtredItems
+      .filter(filterItems)
+      .map((item, index) => (
+        <Item
+          key={index}
+          id={item.id}
+          company={item.company}
+          imageUrl={item.imageUrl}
+          title={item.title}
+          price={item.price}
+          description={item.description}
+          category={item.category}
+          category_type={item.category_type}
+          rating={item.rating}
+          weight={item.weight}
+          onCart={(obj) => onAddToCart(obj)}
+          onClickItem={() => setItemOpened(true)}
+          onShow={(obj) => onShowItem(obj)}
+          setCount={setCount}
+          count={count}
+          minus={minus}
+          plus={plus}
+          onFavorite={(obj) => onAddToFavorite(obj)}
+          {...item}
+        />
+      ));
+  };
   /*const categoriesSection = categories.category;*/
   const sorting = [
     { name: 'названию ↑', sortP: 'title' },
@@ -60,7 +94,6 @@ export const Fruits = ({
                     {category.category_type.map((value, i) => (
                       <a key={i} className={styles.sort} onClick={() => onClickCategoryType(value)}>
                         <p>{value}</p>
-                        <p>{category.id}</p>
                       </a>
                     ))}
                   </div>
@@ -80,8 +113,8 @@ export const Fruits = ({
             <div className="range">
               <Range
                 marks={{
-                  1: `1`,
-                  100000: `100`,
+                  1: ``,
+                  100000: ``,
                 }}
                 min={1}
                 max={100000}
@@ -127,33 +160,15 @@ export const Fruits = ({
                 Сезонное
               </div>
             </div>
+            <div className={styles.search}>
+              <img src="images/search.svg"></img>
+              <input
+                onChange={onChangeSearchInput}
+                value={searchValue}
+                placeholder="Искать"></input>
+            </div>
           </section>
-          <section className={styles.items}>
-            {items.filter(filterItems).map((item, i) => (
-              <Item
-                key={i}
-                id={item.id}
-                company={item.company}
-                imageUrl={item.imageUrl}
-                title={item.title}
-                price={item.price}
-                description={item.description}
-                category={item.category}
-                category_type={item.category_type}
-                rating={item.rating}
-                weight={item.weight}
-                onCart={(obj) => onAddToCart(obj)}
-                onClickItem={() => setItemOpened(true)}
-                onShow={(obj) => onShowItem(obj)}
-                setCount={setCount}
-                count={count}
-                minus={minus}
-                plus={plus}
-                onFavorite={(obj) => onAddToFavorite(obj)}
-                {...item}
-              />
-            ))}
-          </section>
+          <section className={styles.items}>{renderItems()}</section>
         </div>
       </div>
     </div>

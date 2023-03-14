@@ -94,7 +94,6 @@ export const Catalog = ({
                     //onClick={() => onClickCategory(category.category)}
                   >
                     <p>{category.category}</p>
-                    <p>{category.id}</p>
                   </a>
                 </Link>
               ))}
@@ -169,33 +168,7 @@ export const Catalog = ({
               </div>
             </div>
           </section>
-          <section className={styles.items}>
-            {/*{items.map((item, i) => (
-              <Item
-                key={i}
-                id={item.id}
-                company={item.company}
-                imageUrl={item.imageUrl}
-                title={item.title}
-                price={item.price}
-                description={item.description}
-                category={item.category}
-                category_type={item.category_type}
-                rating={item.rating}
-                weight={item.weight}
-                onCart={(obj) => onAddToCart(obj)}
-                onClickItem={() => setItemOpened(true)}
-                onShow={(obj) => onShowItem(obj)}
-                setCount={setCount}
-                count={count}
-                minus={minus}
-                plus={plus}
-                onFavorite={(obj) => onAddToFavorite(obj)}
-                {...item}
-              />
-            ))}*/}
-            {renderItems()}
-          </section>
+          <section className={styles.items}>{renderItems()}</section>
         </div>
       </div>
     </div>

@@ -37,10 +37,6 @@ export const Header = (props) => {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <div className={styles.search}>
-            <img src="images/search.svg"></img>
-            <input placeholder="Искать"></input>
-          </div>
           <div className={styles.loginButtons}>
             <Link to="/cart">
               <img class={styles.icons__header} src="images/cart.svg"></img>
