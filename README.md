@@ -6,6 +6,7 @@ Finished frontend part
 Link to demo version - https://valeriepond.github.io/qmart/#/
 
 Used technologies: React JS, SCSS
+
 For demobackend: MockApi
 
 
