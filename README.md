@@ -1,4 +1,5 @@
 Diploma project
+
 This project is a desktop version of the marketplace for LLP "Zhemchuzhina Semirechiya"
 
 Finished frontend part
