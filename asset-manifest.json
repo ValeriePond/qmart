@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/qmart/static/css/main.54b85262.css",
-    "main.js": "/qmart/static/js/main.3cf7788f.js",
+    "main.css": "/qmart/static/css/main.6da81ca0.css",
+    "main.js": "/qmart/static/js/main.36270d1d.js",
     "static/js/787.f140e3ca.chunk.js": "/qmart/static/js/787.f140e3ca.chunk.js",
     "static/media/Gilroy-UltraLightItalic.eot": "/qmart/static/media/Gilroy-UltraLightItalic.a6fc8679f9d9bbc3e3a7.eot",
     "static/media/Gilroy-UltraLightItalic.ttf": "/qmart/static/media/Gilroy-UltraLightItalic.68a9a27f1aa1261013f3.ttf",
@@ -84,12 +84,12 @@
     "static/media/Gilroy-Regular.woff2": "/qmart/static/media/Gilroy-Regular.f6c9931fabe5a6eb3307.woff2",
     "static/media/Gilroy-Extrabold.woff2": "/qmart/static/media/Gilroy-Extrabold.5c5942d3e4d9a9645df4.woff2",
     "index.html": "/qmart/index.html",
-    "main.54b85262.css.map": "/qmart/static/css/main.54b85262.css.map",
-    "main.3cf7788f.js.map": "/qmart/static/js/main.3cf7788f.js.map",
+    "main.6da81ca0.css.map": "/qmart/static/css/main.6da81ca0.css.map",
+    "main.36270d1d.js.map": "/qmart/static/js/main.36270d1d.js.map",
     "787.f140e3ca.chunk.js.map": "/qmart/static/js/787.f140e3ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54b85262.css",
-    "static/js/main.3cf7788f.js"
+    "static/css/main.6da81ca0.css",
+    "static/js/main.36270d1d.js"
   ]
 }
