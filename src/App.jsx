@@ -22,7 +22,7 @@ import { About } from './pages/About';
 import { Search } from './pages/Search';
 import { Profile } from './pages/Profile';
 import { Addresses } from './pages/Addresses';
-import { Registration } from './pages/Registration';
+import Registration from './pages/Registration';
 import { Cart } from './pages/Cart';
 import { Order } from './pages/Order';
 import { Confirm } from './pages/Confirm';

@@ -47,3 +47,11 @@
     justify-content: space-between;
   }
 }
+
+@media (max-width: 991px) {
+  .wrapper {
+    .data {
+      flex-direction: column;
+    }
+  }
+}

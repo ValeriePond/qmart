@@ -36,8 +36,6 @@ export const Catalog = ({
   setSearchValue,
   onChangeSearchInput,
 }) => {
-  /*const categoriesSection = categories.category;*/
-
   const renderItems = () => {
     const filtredItems = items.filter((item) =>
       item.title.toLowerCase().includes(searchValue.toLowerCase()),
@@ -164,7 +162,16 @@ export const Catalog = ({
               </div>
             </div>
           </section>
-          <section className={styles.items}>{renderItems()}</section>
+          <section className={styles.items}>
+            {!!items.length ? (
+              renderItems()
+            ) : (
+              <div className={styles.emptyCatalog}>
+                <div>Ничего не нашлось</div>
+                <div>Попробуйте другой запрос</div>
+              </div>
+            )}
+          </section>
         </div>
       </div>
     </div>

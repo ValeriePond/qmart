@@ -166,7 +166,16 @@ export const Vegetables = ({
             </div>
           </section>
           <section className={styles.items}>
-            <section className={styles.items}>{renderItems()}</section>
+            <section className={styles.items}>
+              {!!items.length ? (
+                renderItems()
+              ) : (
+                <div className={styles.emptyCatalog}>
+                  <div>Ничего не нашлось</div>
+                  <div>Попробуйте другой запрос</div>
+                </div>
+              )}
+            </section>
           </section>
         </div>
       </div>

@@ -60,7 +60,6 @@
       }
     }
     .form_item {
-      width: 560px;
       margin-top: 8px;
       border: 1px solid $border;
       border-radius: 8px;
@@ -139,6 +138,17 @@
       .count {
         color: $mainOrange;
       }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .step {
+    display: none;
+  }
+  .wrapper {
+    .main {
+      flex-direction: column;
     }
   }
 }

@@ -168,7 +168,16 @@ export const Drinks = ({
                 placeholder="Искать"></input>
             </div>
           </section>
-          <section className={styles.items}>{renderItems()}</section>
+          <section className={styles.items}>
+            {!!items.length ? (
+              renderItems()
+            ) : (
+              <div className={styles.emptyCatalog}>
+                <div>Ничего не нашлось</div>
+                <div>Попробуйте другой запрос</div>
+              </div>
+            )}
+          </section>
         </div>
       </div>
     </div>

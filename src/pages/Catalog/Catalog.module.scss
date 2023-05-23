@@ -156,5 +156,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    max-width: 900px;
+  }
+
+  .emptyCatalog {
+    width: 100%;
+    text-align: left;
+    margin-top: 72px;
+    padding-left: 16px;
+    font-size: 24px;
+    div {
+      margin-bottom: 8px;
+    }
   }
 }

@@ -27,10 +27,6 @@ export const Home = ({ categories }) => {
           </p>
         </div>
       </section>
-      <section className={styles.map}>
-        <h3>Проверьте доставку</h3>
-        <img src="images/map.png"></img>
-      </section>
       <section className={styles.delivery}>
         <p>Доставка осуществляется ежедневно с 14.00 до 23.00</p>
         <p className={styles.price}>
