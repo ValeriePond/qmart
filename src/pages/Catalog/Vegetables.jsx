@@ -146,23 +146,25 @@ export const Vegetables = ({
                 ))}
               </select>
             </div>
-            <div className={styles.tag_name}>
-              <div onClick={setTag1} className={`${activeState1 ? 'active' : ''}`}>
-                Со скидкой
+            <div className={styles.filterItems}>
+              <div className={styles.tag_name}>
+                <div onClick={setTag1} className={`${activeState1 ? 'active' : ''}`}>
+                  Со скидкой
+                </div>
+                <div onClick={setTag2} className={`${activeState2 ? 'active' : ''}`}>
+                  Популярное
+                </div>
+                <div onClick={setTag3} className={`${activeState3 ? 'active' : ''}`}>
+                  Сезонное
+                </div>
               </div>
-              <div onClick={setTag2} className={`${activeState2 ? 'active' : ''}`}>
-                Популярное
+              <div className={styles.search}>
+                <img src="images/search.svg"></img>
+                <input
+                  onChange={onChangeSearchInput}
+                  value={searchValue}
+                  placeholder="Искать"></input>
               </div>
-              <div onClick={setTag3} className={`${activeState3 ? 'active' : ''}`}>
-                Сезонное
-              </div>
-            </div>
-            <div className={styles.search}>
-              <img src="images/search.svg"></img>
-              <input
-                onChange={onChangeSearchInput}
-                value={searchValue}
-                placeholder="Искать"></input>
             </div>
           </section>
           <section className={styles.items}>

@@ -170,3 +170,27 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .wrapper {
+    margin: 0px 50px;
+    .itemList {
+      .tags {
+        /* flex-direction: column;
+        div {
+          margin-left: 0px;
+          margin-right: 20px;
+          margin-bottom: 5px;
+        }
+*/
+        .search {
+          margin-top: 12px;
+          margin-left: 16px;
+        }
+        .filterItems {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
