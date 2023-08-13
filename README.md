@@ -5,12 +5,15 @@ This project is a desktop version of the marketplace for LLP "Zhemchuzhina Semir
 Finished frontend part
 
 Link to demo version - https://valeriepond.github.io/qmart/#/
-
+____________
 Link to landing page - https://github.com/ValeriePond/qmart-landing
-Demo landing - https://valeriepond.github.io/qmart-landing/
 
+Demo landing - https://valeriepond.github.io/qmart-landing/
+____________
 Apps: 
+
 https://github.com/Askarov2001/QmartForSellers
+
 https://github.com/Askarov2001/QmartApp
 
 Used technologies: React JS, SCSS
