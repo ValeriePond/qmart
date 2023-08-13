@@ -6,6 +6,13 @@ Finished frontend part
 
 Link to demo version - https://valeriepond.github.io/qmart/#/
 
+Link to landing page - https://github.com/ValeriePond/qmart-landing
+Demo landing - https://valeriepond.github.io/qmart-landing/
+
+Apps: 
+https://github.com/Askarov2001/QmartForSellers
+https://github.com/Askarov2001/QmartApp
+
 Used technologies: React JS, SCSS
 
 For demobackend: MockApi
